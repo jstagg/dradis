@@ -25,7 +25,7 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Welcome! Please hit your API at `/apiname` to activate."))
+	w.Write([]byte("Welcome! Please hit your API like `http://localhost:8888/alias?input=SPR1011` to activate."))
 }
 
 func customerHandler(client *redis.Client) http.HandlerFunc {
@@ -65,7 +65,7 @@ func aliasHandler(client *redis.Client) http.HandlerFunc {
 func main() {
 	// Create Redis Client
 	var (
-		host     = getEnv("REDIS_HOST", "localhost")
+		host     = getEnv("REDIS_HOST", "dradis")
 		port     = string(getEnv("REDIS_PORT", "6379"))
 		password = getEnv("REDIS_PASSWORD", "")
 		//db       = getEnv("REDIS_DB", "10")
