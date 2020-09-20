@@ -2,12 +2,12 @@ version: '3'
 
 services:
     db:
-        image: dradis-back:latest
+        image: jstagg/repo:dradis-back
         container_name: dradis-back
         ports:
             - "6379:6379"
     web:
-        image: dradis-front:latest
+        image: jstagg/repo:dradis-front
         container_name: dradis-front
         ports:
             - "8888:8888"

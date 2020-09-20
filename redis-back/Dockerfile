@@ -22,5 +22,4 @@ RUN dos2unix /data/* && chmod 755 /data/load.sh && dos2unix /data/load.sh
 CMD ["/data/load.sh"]
 
 # build hint
-# docker build -t jstagg/dradis-back:minideb .
-# docker build -t dradis-back .
+# docker build -t jstagg/repo:dradis-back .

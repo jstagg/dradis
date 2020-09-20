@@ -14,5 +14,4 @@ COPY --from=build /bin/dradis /bin/dradis
 ENTRYPOINT ["/bin/dradis"]
 
 # build hint
-# docker build -t jstagg/dradis-front:minideb . # or alpine
-# docker build -t dradis-front .
+# docker build -t jstagg/repo:dradis-front .
