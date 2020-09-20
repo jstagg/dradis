@@ -1,4 +1,4 @@
 # dradis
- Go http front-end for Redis docker
+Go http front-end for Redis docker
 
-The backend is in "docker-redis-backend." The front-end is here.
+The back-end is in "redis-back" and the front-end is "redis-front."
