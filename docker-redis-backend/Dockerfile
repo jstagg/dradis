@@ -1,5 +1,6 @@
 # Specify the node base image
-FROM redis:6
+#FROM redis:6
+FROM bitnami/minideb:buster
 
 # Maintainer
 LABEL maintainer="jstagg@gmail.com"
@@ -8,7 +9,8 @@ LABEL maintainer="jstagg@gmail.com"
 EXPOSE 6379
 
 # Ready the container
-RUN apt update && apt install -y dos2unix vim && apt clean
+#RUN apt update && apt install -y dos2unix vim && apt clean
+RUN install_packages redis dos2unix vim
 RUN dos2unix /data/* && chmod 755 /data/load.sh && dos2unix /data/load.sh
 
 # Install app dependencies
