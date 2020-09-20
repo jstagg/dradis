@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start process
-redis-server &
+redis-server --bind 0.0.0.0 &
 
 # Wait for pid 
 until pids=$(pidof redis-server)
@@ -11,7 +11,8 @@ done
 
 # Import the data
 sleep 5
-cat data.txt | redis-cli --pipe 
+cat /data/data.txt | redis-cli --pipe 
+sleep 5
 
 # Let the container run indefinitely
 mkfifo /tmp/mypipe

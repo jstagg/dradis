@@ -20,7 +20,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-redis/redis"
+	//"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v7"
 	"github.com/gorilla/mux"
 )
 
@@ -65,7 +66,7 @@ func aliasHandler(client *redis.Client) http.HandlerFunc {
 func main() {
 	// Create Redis Client
 	var (
-		host     = getEnv("REDIS_HOST", "dradis")
+		host     = getEnv("REDIS_HOST", "dradis-back")
 		port     = string(getEnv("REDIS_PORT", "6379"))
 		password = getEnv("REDIS_PASSWORD", "")
 		//db       = getEnv("REDIS_DB", "10")
